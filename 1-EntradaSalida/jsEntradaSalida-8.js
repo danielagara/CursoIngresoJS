@@ -14,6 +14,11 @@ function SacarResto()
 	alert("El resto es "+resto);
 	//division: simbolo a utilizar '/'
 	//para mostrar el resto usar '%' modulo
+	/*var resultado
+	resultado=2%10;
+	alert(resultado);
+	resultado=10%2;
+	alert(resultado); prueba */
 	
 
 }

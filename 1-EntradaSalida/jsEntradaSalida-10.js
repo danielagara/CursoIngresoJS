@@ -6,13 +6,17 @@ function MostrarAumento()
 {
 	var importe;
 	var resultado;
-	var descuento;
+	//var descuento;
 	importe=document.getElementById('importe').value;
 	importe=parseInt(importe);
 
-	descuento=(importe*10)/100;
-	resultado=(importe-descuento);
+	//descuento=(importe*25)/100; PRIMER INTENTO CON DIF VARIABLES Y CUENTA
+	//resultado=(importe-descuento);
 
+
+	//descuento=(importe*0.25); otro intento
+	//resultado=(importe-descuento);
+	resultado=(importe*0.75);
 	document.getElementById('resultado').value=resultado;
 
 

@@ -7,15 +7,15 @@ function MostrarAumento()
 
 	var sueldo;
 	var resultado;
-	var aumento;
+	//var aumento;PRIMER INTENTO haciendo operacion completa y creando otras variables
 	
 	sueldo=document.getElementById('sueldo').value;
 	sueldo=parseInt(sueldo);
 	
-	aumento=(sueldo*10)/100;
-	
-	resultado=sueldo+aumento;
-
+	//aumento=(sueldo*10)/100; 
+	//aumento=(sueldo*1.10);
+	//resultado=sueldo+aumento;
+	resultado=(sueldo*1.1);
 
 	document.getElementById('resultado').value=resultado;
 
