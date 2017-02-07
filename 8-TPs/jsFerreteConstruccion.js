@@ -22,7 +22,8 @@ function Circulo ()
 	var largo;
 	radio=document.getElementById('Radio').value;
 	radio=parseInt(radio);
-	var circulo=(3.14*radio)*3;
+	var diametro=(radio*2);
+	var circulo=(3.14*radio*diametro)*3;
 	alert(circulo);
 
 }
