@@ -16,6 +16,7 @@ function comenzar()
 	numeroAzar=Math.floor((Math.random() * 100) + 1);
 		//alert(numeroSecreto );
 	alert(numeroAzar);
+	intentos = 0;
 }
 
 function verificar()
