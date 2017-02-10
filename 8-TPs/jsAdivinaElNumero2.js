@@ -52,8 +52,8 @@ function verificar()
 		alert("Usted esta en la media");
 		intentos = 0;
 	}
-		//PREGUNTAR PQ ME TIRA UNO DE LOS OTROS MSJ CUANDO QUIERO HACER DE 6 A 10
-	if(numeroSecreto==numeroAzar && intentos>=6)
+		//SE PONE IGUAL EL &&
+	if(numeroSecreto==numeroAzar && intentos>=6 && intentos<=10)
 	{
 		alert("Usted necesita práctica");
 		intentos = 0;
