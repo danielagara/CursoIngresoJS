@@ -10,6 +10,7 @@ precioDescuento=parseInt(precioDescuento);
 precioSinDescuento=parseInt(precioSinDescuento);
 precioSinDescuento=(cantidad*35);
 marca=document.getElementById('Marca').value;
+document.getElementById('precioDescuento').value=precioDescuento;
 
 function CalcularPrecio () 
 {
@@ -29,15 +30,37 @@ function CalcularPrecio ()
 			precioDescuento=(precioSinDescuento*0,7);
 		}
 		else
-		{
+		{//C: 
 			if(cantidad==4 && marca=="ArgentinaLuz" || marca="FelipeLamparas")
 			{
 				precioDescuento=(precioSinDescuento*0,8);
 			}
 			else if(cantidad==4 && marca!="ArgentinaLuz" || marca!="FelipeLamparas")
 			{
-				precioDescuento=(precioSinDescuento*0;85);
+				precioDescuento=(precioSinDescuento*0,85);
+			}
+			else
+			{//D: REVISAR CUENTAS
+				if(cantidad==3 && marca=="ArgentinaLuz")
+				{
+					precioDescuento=(precioSinDescuento*0,04);
+				}
+				if(cantidad==3 && marca=="FelipeLamparas")
+				{
+					precioDescuento=(precioSinDescuento*0,1);
+				}
+				else(cantidad==3 && marca!="ArgentinaLuz" || marca!="FelipeLamparas")
+				{
+					precioDescuento=(precioSinDescuento*0,05);
+				}
 			}
 		}
+	}
+
+	if(precioDescuento>=120)
+	{
+		impuesto=(precioDescuento*10)/100;
+		precioFinal=(precioDescuento+impuesto);
+		alert("Usted pagó "+precioFinal+" siendo "+impuesto+" el impuesto que pagó.")
 	}
 }
