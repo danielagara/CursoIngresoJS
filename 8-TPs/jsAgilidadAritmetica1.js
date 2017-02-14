@@ -6,15 +6,53 @@ y una de las cuatro operaciones básicas (suma, resta,
  el resultado de la operación y presionar el botón Aceptar.
 se debe informar si el resultado es el correcto o no.
 */
-var respuesta;
+	var respuesta;
+	var numero1;
+	numero1=Math.floor((Math.random() * 10) + 1);
+	var numero2;
+	numero2=Math.floor((Math.random() * 10) +1);
+	var operator;
+	operator=Math.floor((Math.random() * 4) +1);
+	var resultado;
+	numero1=parseInt(numero1);
+	numero2=parseInt(numero2);
+
 function comenzar()
 {
+	/*var numero1;
+	numero1=Math.floor((Math.random() * 10) + 1);
+	var numero2;
+	numero2=Math.floor((Math.random() * 10) +1);
+	var operaciones;
+	operaciones=Math.floor((Math.random() * 4) +1);*/
+	switch(operator)
+	{
+		case 1:
+		operator='+';
+		break;
 
-	
+		case 2:
+		operator='-';
+		break;
+
+		case 3:
+		operator='*';
+		break;
+
+		case 4:
+		operator="/";
+		break;
+	}
+	document.getElementById('PrimerNumero').value=numero1;
+	document.getElementById('SegundoNumero').value=numero2;
+	document.getElementById('Operador').value=operator;
+	//si no se pone value diectamente no aparece y tira error invalido de definir
 
 }//FIN DE LA FUNCIÓN
 function Responder()
 {
-	
+	respuesta=(numero1+operator+numero2);
+	alert(respuesta);
 
 }//FIN DE LA FUNCIÓN
+//SIN TERMINAR
