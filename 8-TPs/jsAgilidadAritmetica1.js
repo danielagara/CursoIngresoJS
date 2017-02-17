@@ -29,18 +29,22 @@ function comenzar()
 	{
 		case 1:
 		operator='+';
+		resultado=(numero1+numero2);
 		break;
 
 		case 2:
 		operator='-';
+		resultado=(numero1-numero2);
 		break;
 
 		case 3:
 		operator='*';
+		resultado=(numero1*numero2);
 		break;
 
 		case 4:
 		operator="/";
+		resultado=(numero1/numero2);
 		break;
 	}
 	document.getElementById('PrimerNumero').value=numero1;
@@ -51,8 +55,16 @@ function comenzar()
 }//FIN DE LA FUNCIÓN
 function Responder()
 {
-	respuesta=(numero1+operator+numero2);
-	alert(respuesta);
+
+	respuesta=document.getElementById('Respuesta').value;
+	if(respuesta==resultado)
+	{
+		alert("GANASTE!");
+	}
+	else
+	{
+		alert("PERDISTE :( ");
+	}
 
 }//FIN DE LA FUNCIÓN
 //SIN TERMINAR
