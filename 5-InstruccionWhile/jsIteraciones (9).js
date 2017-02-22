@@ -1,6 +1,6 @@
 function Mostrar()
 {
-	//SIRVE PARA QUE SEPAMOS SI NADIE HIXO ALGO, QUE SEA EL PRIMERO
+	//BANDERA: SIRVE PARA QUE SEPAMOS SI NADIE HIXO ALGO, QUE SEA EL PRIMERO
 	var bandera="nadie";
 
 	var contador=0;
@@ -42,6 +42,7 @@ function Mostrar()
 		contador++;
 		nombre=prompt('Por favor ingrese nombre');
 		//vuelvo a llamar a la variable que va a validar, si no no sale del bucle
+
 		edad=prompt('Ingrese edad');
 		edad=parseInt(edad);
 		while(edad<0 || edad>100)
