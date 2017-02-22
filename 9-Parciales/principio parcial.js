@@ -130,13 +130,13 @@
 //mide si seguir o no:	
 	var respuesta='si';
 
-	var acumulador;
+	var acumuladorNotas=0;
 
 	var promedio;
 
 	var notaMasBaja;//MINIMO
 
-	var varonesNotaMas6;
+	var acumuladorVaronesNotaMas6=0;
 
 	while(respuesta!='no' && contador<99) 
 	{
@@ -144,6 +144,7 @@
 
 		notas=prompt('Ingrese las otas del alumno');
 		notas=parseInt(notas);
+		acumuladorNotas=acumuladorNotas+notas;
 		while(notas<0 && notas>10)
 		{
 			notas=prompt('ERROR Ingrese las notas correctamente');
@@ -155,13 +156,37 @@
 		while(sexo!='f' && sexo!='v')
 		{
 			sexo=prompt('Ingrese su sexo correctamente');
-
+	
 		}
+
+
+
+		promedio=(acumulador/contador);
+
+
+
+		if(contador==1)
+		{
+			notas=notaMasBaja;
+		}
+		else
+		{
+			if(notaMasBaja<nota)
+			{
+				notas=notaMasBaja;
+			}
+		}
+
+
+		if(sexo=='v' && nota>=6)
+		{
+			acumuladorVaronesNotaMas6++;
+		}
+
+		respuesta=prompt('Si quiere dejar de ingresar datos, escriba no');
+
 	}
 
-	
-	
 
 
-
-
+//8: 
