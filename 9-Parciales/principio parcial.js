@@ -68,4 +68,100 @@
 
 //5: SWITCH
 
-	var 
+	var diaDeSemana;
+	switch(diaDeSemana)
+	{
+		case 'Sabado':
+		case 'Domingo':
+		alert('Es fin de semana!!');
+		break;
+
+		default:
+		alert('A trabajar!!!!');
+		break;
+	}
+
+//6: iteraciones:
+
+	var importeDeVentas;
+	var maximo;
+	var minimo;
+	var importeDeVentasMaximo;
+	var importeDeVentasMinimo;
+	var contador=0;
+
+	importeDeVentas=prompt('Ingrese el importe de las ventas');
+	importeDeVentas=parseInt(importeDeVentas);
+	
+	while(importeDeVentas<=0)
+	{
+		contador++;
+		prompt('ERROR Ingrese el importe de ventas correctamente');
+		importeDeVentas=parseInt(importeDeVentas);
+
+	}
+
+	if(contador==1)
+	{
+		importeDeVentasMinimo=importeDeVentas;
+		importeDeVentasMaximo=importeDeVentas;
+	}
+	else
+	{
+		if(importeDeVentas<importeDeVentasMinimo)
+		{
+			importeDeVentasMinimo=importeDeVentas;
+		}
+		if(importeDeVentas>importeDeVentasMaximo)
+		{
+			importeDeVentasMaximo=importeDeVentas;
+		}
+	}
+
+//7: mas iteraciones:
+
+//a ingresar:
+	var notas;
+	var sexo;
+
+//contador:	
+	var contador=0;
+
+//mide si seguir o no:	
+	var respuesta='si';
+
+	var acumulador;
+
+	var promedio;
+
+	var notaMasBaja;//MINIMO
+
+	var varonesNotaMas6;
+
+	while(respuesta!='no' && contador<99) 
+	{
+		contador++;
+
+		notas=prompt('Ingrese las otas del alumno');
+		notas=parseInt(notas);
+		while(notas<0 && notas>10)
+		{
+			notas=prompt('ERROR Ingrese las notas correctamente');
+			notas=parseInt(notas);
+		}
+
+
+		sexo=prompt('Ingrese su sexo');
+		while(sexo!='f' && sexo!='v')
+		{
+			sexo=prompt('Ingrese su sexo correctamente');
+
+		}
+	}
+
+	
+	
+
+
+
+
