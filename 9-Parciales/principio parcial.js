@@ -1,4 +1,8 @@
 //PARCIAL:
+
+/* dudas:
+1-es necesario aclarar funciones?
+2-suma de el ultimo punto */
 //ENTRADA Y SALIDA
 //1:
 
@@ -190,3 +194,62 @@
 
 
 //8: 
+
+	var respuesta='si';
+
+	var numero;
+	var contadorNumerosPares=0;
+	var promedio;
+	var acumuladorNumeros=0;
+	var maximo;
+	var minimo;
+	var contador=0;
+
+
+	while (respuesta!='no')
+	{
+		contador++;
+		numero=prompt('Ingrese el numero positivo');
+		numero=parseInt(numero);
+		acumuladorNumeros=acumuladorNumeros+numero;
+
+		while(numero<0)
+		{
+			numero=prompt('ERROR Ingrese el numero positivo');
+			numero=parseInt(numero);
+		}
+
+		if(numero % 2 == 0)
+		{
+			acumuladorNumerosPares++;
+		}
+
+		respuesta=prompt('Ingrese no para dejar de ingresar numeros');
+
+		if(contador==1)
+		{
+			minimo=numero;
+			maximo=numero;
+		}
+		else
+		{
+			if(numero<minimo)
+			{
+				minimo=numero;
+			}
+
+			if(numero>maximo)
+			{
+				maximo=numero;
+			}
+		}
+
+	}
+
+	promedio=(acumuladorNumeros/contador);
+
+	document.writeln('Cantidad de números pares '+contadorNumerosPares);
+	document.writeln('Promedio de números ingresados '+promedio);
+	document.writeln('Suma de todos los números '+acumuladorNumeros);
+	document.writeln('Número máximo '+maximo);
+	document.writeln('Número mínimo '+minimo);
