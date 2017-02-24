@@ -1,5 +1,7 @@
 function Mostrar()
 {
+	var bandera="nadie";
+
 	var mascota;
 	var contador=0;
 	var contadorMascota=0;
@@ -8,9 +10,20 @@ function Mostrar()
 	var edad;
 	var edadMasVieja;
 	var edadMasViejaSinMascota;
+	var nombrePrimerGato;
+	var edadGato;
+	var sexo;
 
-	for(;contador<1000;)
+	for(;contador<2;)
 	{
+		edad=prompt('Ingrese su edad');
+
+		sexo=prompt('Ingrese su sexo');
+		while(sexo!='f' && sexo!='m')
+		{
+			sexo=prompt('ERROR Ingrese su sexo');
+		}
+
 		mascota=prompt('Tiene mascota?');
 		
 		while(mascota!='si' && mascota!='no')
@@ -28,6 +41,26 @@ function Mostrar()
 				tipoMascota=prompt('ERROR Ingrese si es perro o gato');
 			}
 
+			if(tipoMascota=='gato' && edad>=30 && sexo=='f')
+			{
+				
+				edadGato=prompt('Ingrese la edad de su gato');
+				edadGato=parseInt(edadGato);
+				while(edadGato>15)
+				{
+					edadGato=prompt('ERROR Ingrese la edad de su gato correctamente');
+					edadGato=parseInt(edadGato);
+				}
+
+				if(edadGato<=5  && bandera=="nadie")
+				{
+					nombrePrimerGato=prompt('Ingrese el nombre de su gato');
+					//CAMBIO EL VALOR DE LA BANDERA ASI NO ME DEJA INGRESAR OTRA VEZ
+					bandera='alguien';
+				}
+			}
+
+
 		}
 
 		else //if(mascota=='no') NO HACE FALTA
@@ -35,7 +68,6 @@ function Mostrar()
 			contadorNoMascota++;
 		}
 
-		edad=prompt('Ingrese su edad');
 
 		if(contador==1)
 		{
@@ -57,6 +89,7 @@ function Mostrar()
 		contador++;
 	}
 
+	console.log(nombrePrimerGato); //PARA VERIFICAR
 }
 
 //pensar otras maneras de pedir informacion
