@@ -8,9 +8,11 @@
 //1:
 
 	var base;
+	var perimetro;
+
+	//base=prompt('ingrese base'); USADO PARA PROBAR YA QUE NO HABIA ID
 	base=document.getElementById('base').value;
 	base=parseInt(base);
-	var perimetro;
 	perimetro=parseInt(perimetro);
 	perimetro=(base*4);
 	alert(perimetro);
@@ -18,62 +20,83 @@
 //2:
 
 	var importeProducto;
-	importeProducto=prompt('Ingresa importe').value;
-	importeProducto=parseInt(importeProducto);
 	var iva;
-	iva=parseInt(iva);
-	iva=(importeProducto*21)/100;
 	var resultadoFinal;
-	resultadoFinal=parseInt(resultadoFinal);
+
+	importeProducto=prompt('Ingresa importe');//NO SE PONE VALUE
+	importeProducto=parseInt(importeProducto);
+
+	iva=(importeProducto*21)/100;
+	iva=parseInt(iva);
+
 	resultadoFinal=(importeProducto+iva);
+	resultadoFinal=parseInt(resultadoFinal);
+
 	alert('Su importe final sera de '+resultadoFinal);
 
 //3:
 
 	var largo;
 	var ancho;
-	largo=document.getElementById('largo').value;
-	ancho=document.getElementById('ancho').value;
+	var perimetro;
+	var alambre;
+	//largo=document.getElementById('largo').value;
+	//ancho=document.getElementById('ancho').value;
+	largo=prompt('ingrese largo');
+	ancho=prompt('ingrese ancho');
 	largo=parseInt(largo);
 	ancho=parseInt(ancho);
-	var perimetro;
-	perimetro=parseInt(perimetro);
+
 	perimetro=(2*largo)+(2*ancho);
-	var alambre;
-	alambre=parseInt(alambre);
+	perimetro=parseInt(perimetro);
+
+
 	alambre=(perimetro*3);
-	alert('Se necesitan '+alambre)
+	alambre=parseInt(alambre);
+
+	alert('Se necesitan '+alambre+' metros de alambre');
 
 //IF Y SWITCH
 //4: IF
 
 	var numeroUno;
 	var numeroDos;
-	numeroUno=prompt('inserte numero uno').value;
-	numeroDos=prompt('inserte numero dos').value;
+	var resultadoFinal;
+
+	numeroUno=prompt('inserte numero uno');
+	numeroDos=prompt('inserte numero dos');
 	numeroUno=parseInt(numeroUno);
 	numeroDos=parseInt(numeroDos);
-	var resultadoFinal;
+
 
 	if(numeroUno==numeroDos)
 	{
 		resultadoFinal=(numeroUno*numeroDos);
+		document.writeln('Se multiplicaron y el resultado es: '+resultadoFinal+"<br>");
 		//NO ES ALERT, ES POR DOC WRITE QUE NO SE COMO SE HACE alert('Se multiplicaron y el resultado es: '+resultadoFinal);
 	}
-	if(numeroUno>numeroDos)
-	{
-		resultadoFinal=(numeroUno-numeroDos);
-		//DOC WRITE
-	}
 	else
-	{
-		resultadoFinal=(numeroUno+numeroDos);
-		//DOC WRITE
+	{	//SI SE PONE COMO 2 IF Y UN ELSE Y SON IGUALES ME VA A MULTIPLICAR Y SUMAR, POR ESO LO PUSE ASI
+		if(numeroUno>numeroDos)
+		{
+			resultadoFinal=(numeroUno-numeroDos);
+			document.writeln('Se restaron y el resultado es: '+resultadoFinal+"<br>");
+			//DOC WRITE
+		}
+		else
+		{
+			resultadoFinal=(numeroUno+numeroDos);
+			document.writeln('Se sumaron y el resultado es: '+resultadoFinal+"<br>");
+			//DOC WRITE
+		}
+
 	}
 
 //5: SWITCH
 
 	var diaDeSemana;
+
+	diaDeSemana=prompt('Ingrese un dia de semana');
 	switch(diaDeSemana)
 	{
 		case 'Sabado':
@@ -85,7 +108,7 @@
 		alert('A trabajar!!!!');
 		break;
 	}
-
+	
 //6: iteraciones:
 
 	var importeDeVentas;
@@ -95,32 +118,34 @@
 	var importeDeVentasMinimo;
 	var contador=0;
 
-	importeDeVentas=prompt('Ingrese el importe de las ventas');
-	importeDeVentas=parseInt(importeDeVentas);
-	
-	while(importeDeVentas<=0)
+	while(contador<=24)
 	{
-		contador++;
-		prompt('ERROR Ingrese el importe de ventas correctamente');
+		importeDeVentas=prompt('Ingrese el importe de las ventas');
 		importeDeVentas=parseInt(importeDeVentas);
+		while(importeDeVentas<=0)
+		{
+			importeDeVentas=prompt('ERROR Ingrese el importe de ventas correctamente');
+			importeDeVentas=parseInt(importeDeVentas);
+		}
 
-	}
-
-	if(contador==1)
-	{
-		importeDeVentasMinimo=importeDeVentas;
-		importeDeVentasMaximo=importeDeVentas;
-	}
-	else
-	{
-		if(importeDeVentas<importeDeVentasMinimo)
+		if(contador==0)
 		{
 			importeDeVentasMinimo=importeDeVentas;
-		}
-		if(importeDeVentas>importeDeVentasMaximo)
-		{
 			importeDeVentasMaximo=importeDeVentas;
 		}
+		else
+		{
+			if(importeDeVentas<importeDeVentasMinimo)
+			{
+				importeDeVentasMinimo=importeDeVentas;
+			}
+			if(importeDeVentas>importeDeVentasMaximo)
+			{
+				importeDeVentasMaximo=importeDeVentas;
+			}
+		}
+
+		contador++;
 	}
 
 //7: mas iteraciones:
