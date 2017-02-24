@@ -9,5 +9,19 @@ e.	Se pedirán un número positivo y se mostrará la cantidad de números Primos
 */
 function ComenzarIngreso () 
 {
- 	
+	var numero;
+	var contadorPares;
+
+	numero=prompt('Ingrese su numero positivo');
+	numero=parseInt(numero);
+
+	while(numero<0)
+	{
+		numero=prompt('ERROR Ingrese su numero positivo');
+		numero=parseInt(numero);
+	}
+	if(numero % 2 ==0)
+	{
+		contadorPares++;
+	}	
 }
