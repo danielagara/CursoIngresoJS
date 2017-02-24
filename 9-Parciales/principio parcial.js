@@ -1,4 +1,5 @@
 //PARCIAL:
+//PONER ESTOS EN JS SEPARADOS DE ENTRADA SALIDA Y ETC PARA PROBARLOS
 
 /* dudas:
 1-es necesario aclarar funciones?
@@ -11,7 +12,7 @@
 	base=parseInt(base);
 	var perimetro;
 	perimetro=parseInt(perimetro);
-	perimetro=(base*base);
+	perimetro=(base*4);
 	alert(perimetro);
 
 //2:
@@ -248,8 +249,8 @@
 
 	promedio=(acumuladorNumeros/contador);
 
-	document.writeln('Cantidad de números pares '+contadorNumerosPares);
-	document.writeln('Promedio de números ingresados '+promedio);
-	document.writeln('Suma de todos los números '+acumuladorNumeros);
-	document.writeln('Número máximo '+maximo);
-	document.writeln('Número mínimo '+minimo);
+	document.writeln('Cantidad de números pares '+contadorNumerosPares+"<br>");
+	document.writeln('Promedio de números ingresados '+promedio+"<br>");
+	document.writeln('Suma de todos los números '+acumuladorNumeros+"<br>");
+	document.writeln('Número máximo '+maximo+"<br>");
+	document.writeln('Número mínimo '+minimo+"<br>");
