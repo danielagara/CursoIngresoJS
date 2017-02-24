@@ -9,8 +9,10 @@ e.	Se pedirán un número positivo y se mostrará la cantidad de números Primos
 */
 function ComenzarIngreso () 
 {
+	//PREGUNTAR QUE ONDA
 	var numero;
-	var contadorPares;
+	var contadorPares=0;
+	var respuesta
 
 	numero=prompt('Ingrese su numero positivo');
 	numero=parseInt(numero);
@@ -23,5 +25,9 @@ function ComenzarIngreso ()
 	if(numero % 2 ==0)
 	{
 		contadorPares++;
-	}	
+	}
+
+
+
+	console.log('Cantidad de numeros pares '+contadorPares);	
 }
