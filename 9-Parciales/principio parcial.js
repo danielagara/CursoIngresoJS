@@ -72,7 +72,7 @@
 	if(numeroUno==numeroDos)
 	{
 		resultadoFinal=(numeroUno*numeroDos);
-		document.writeln('Se multiplicaron y el resultado es: '+resultadoFinal+"<br>");
+		document.write('Se multiplicaron y el resultado es: '+resultadoFinal+"<br>");
 		//NO ES ALERT, ES POR DOC WRITE QUE NO SE COMO SE HACE alert('Se multiplicaron y el resultado es: '+resultadoFinal);
 	}
 	else
@@ -80,13 +80,13 @@
 		if(numeroUno>numeroDos)
 		{
 			resultadoFinal=(numeroUno-numeroDos);
-			document.writeln('Se restaron y el resultado es: '+resultadoFinal+"<br>");
+			document.write('Se restaron y el resultado es: '+resultadoFinal+"<br>");
 			//DOC WRITE
 		}
 		else
 		{
 			resultadoFinal=(numeroUno+numeroDos);
-			document.writeln('Se sumaron y el resultado es: '+resultadoFinal+"<br>");
+			document.write('Se sumaron y el resultado es: '+resultadoFinal+"<br>");
 			//DOC WRITE
 		}
 
@@ -157,9 +157,6 @@
 //contador:	
 	var contador=0;
 
-//mide si seguir o no:	
-	var respuesta='si';
-
 	var acumuladorNotas=0;
 
 	var promedio;
@@ -168,13 +165,14 @@
 
 	var acumuladorVaronesNotaMas6=0;
 
-	while(respuesta!='no' && contador<99) 
+	while(contador<=2) 
 	{
-		contador++;
 
-		notas=prompt('Ingrese las otas del alumno');
+		notas=prompt('Ingrese las notas');
 		notas=parseInt(notas);
 		acumuladorNotas=acumuladorNotas+notas;
+		acumuladorNotas=parseInt(acumuladorNotas);
+		
 		while(notas<0 && notas>10)
 		{
 			notas=prompt('ERROR Ingrese las notas correctamente');
@@ -183,45 +181,44 @@
 
 
 		sexo=prompt('Ingrese su sexo');
-		while(sexo!='f' && sexo!='v')
+		while(sexo!='f' && sexo!='m')
 		{
 			sexo=prompt('Ingrese su sexo correctamente');
 	
 		}
 
-
-
-		promedio=(acumulador/contador);
-
-
-
-		if(contador==1)
+		if(contador==0)
 		{
-			notas=notaMasBaja;
+			notaMasBaja=notas;
 		}
 		else
 		{
-			if(notaMasBaja<nota)
+			if(notas<notaMasBaja)
 			{
-				notas=notaMasBaja;
+				notaMasBaja=notas;
 			}
 		}
 
 
-		if(sexo=='v' && nota>=6)
+		if(sexo=='m' && notas>=6)
 		{
 			acumuladorVaronesNotaMas6++;
 		}
 
-		respuesta=prompt('Si quiere dejar de ingresar datos, escriba no');
+	contador++;
 
 	}
 
+	promedio=(acumuladorNotas/contador);
 
+	alert('el promedio de las notas totales es: '+promedio);
+	alert('la nota mas baja es: '+notaMasBaja);
+	alert('Los varones con nota 6 o mayor son: '+acumuladorVaronesNotaMas6);
+}
 
 //8: 
 
-	var respuesta='si';
+var respuesta='si';
 
 	var numero;
 	var contadorNumerosPares=0;
@@ -234,7 +231,7 @@
 
 	while (respuesta!='no')
 	{
-		contador++;
+		
 		numero=prompt('Ingrese el numero positivo');
 		numero=parseInt(numero);
 		acumuladorNumeros=acumuladorNumeros+numero;
@@ -247,10 +244,9 @@
 
 		if(numero % 2 == 0)
 		{
-			acumuladorNumerosPares++;
+			contadorNumerosPares++;
 		}
 
-		respuesta=prompt('Ingrese no para dejar de ingresar numeros');
 
 		if(contador==1)
 		{
@@ -269,13 +265,15 @@
 				maximo=numero;
 			}
 		}
+		contador++;
+		respuesta=prompt('Ingrese no para dejar de ingresar numeros');
 
 	}
 
 	promedio=(acumuladorNumeros/contador);
 
-	document.writeln('Cantidad de números pares '+contadorNumerosPares+"<br>");
-	document.writeln('Promedio de números ingresados '+promedio+"<br>");
-	document.writeln('Suma de todos los números '+acumuladorNumeros+"<br>");
-	document.writeln('Número máximo '+maximo+"<br>");
-	document.writeln('Número mínimo '+minimo+"<br>");
+	document.write("Cantidad de números pares "+contadorNumerosPares+"<br>");
+	document.write("Promedio de números ingresados "+promedio+"<br>");
+	document.write("Suma de todos los números "+acumuladorNumeros+"<br>");
+	document.write("Número máximo "+maximo+"<br>");
+	document.write("Número mínimo "+minimo);

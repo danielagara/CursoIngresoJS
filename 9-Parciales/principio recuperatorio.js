@@ -9,12 +9,14 @@
 	var base;
 	var superficie;
 
+	//base=prompt('ingrese la base');
 	base=document.getElementById('base').value;
 	base=parseInt(base);
 
 	superficie=(base*base);
 
 	alert('La superficie del cuadrado es '+superficie);
+
 
 
 //2:
@@ -27,12 +29,15 @@
 	importeProducto=prompt('Ingrese el importe del producto');
 	importeProducto=parseInt(importeProducto);
 
-	descuento=parseInt(descuento);
+
 	descuento=(importeProducto*25)/100;
+	descuento=parseInt(descuento);
 
 	importeFinal=(importeProducto-descuento);
 
 	document.getElementById('importeFinal')=importeFinal;
+
+	//alert(importeFinal);
 
 //3:
 
@@ -42,24 +47,32 @@
 	var sumaPrecios;
 	var promedioPrecios;
 
+
 	precio1=document.getElementById('precio1').value;
 	precio2=document.getElementById('precio2').value;
 	precio3=document.getElementById('precio3').value;
+	//precio1=prompt('precio1');
+	//precio2=prompt('precio2');
+	//precio3=prompt('precio3');
 
 	precio1=parseInt(precio1);
 	precio2=parseInt(precio2);
 	precio3=parseInt(precio3);
 
 	sumaPrecios=(precio1+precio2+precio3);
+	sumaPrecios=parseInt(sumaPrecios);
 
 	promedioPrecios=(sumaPrecios)/3;
-
 	document.getElementById('suma precios').value=sumaPrecios;
 	document.getElementById('promedioPrecios').value=promedioPrecios;
+
+	//alert(sumaPrecios);
+	//alert(promedioPrecios);
 
 
 //IF Y SWITCH
 //4:
+
 
 	var numero1;
 	var numero2;
@@ -72,21 +85,22 @@
 	numero2=parseInt(numero2);
 
 	sumaDeNumeros=(numero1+numero2);
+	sumaDeNumeros=parseInt(sumaDeNumeros);
 
 	if(sumaDeNumeros<0)
 	{
-		document.writeln('El resultadod de la suma es negativo');
+		document.write('El resultadod de la suma es negativo');
 	}
 	else
 	{
 		if(sumaDeNumeros>0)
 		{
-			document.writeln('El resultado de la suma es positivo')
+			document.write('El resultado de la suma es positivo')
 		}
 
 		if(sumaDeNumeros==0)
 		{
-			document.writeln('El resultado de la suma es 0')
+			document.write('El resultado de la suma es 0')
 		}
 	}
 
@@ -118,9 +132,9 @@
 	var maximo;
 	var contador=0;
 
-		while(contador<50)
+	while(contador<50)
 	{
-		contador++;
+		
 		pesoContenedores=prompt('Ingrese el peso de los contenedores');
 		pesoContenedores=parseInt(pesoContenedores);
 		
@@ -129,9 +143,6 @@
 		pesoContenedores=prompt('ERROR Ingrese el peso de los contenedores');
 		pesoContenedores=parseInt(pesoContenedores);
 	}
-
-	}
-
 
 	if (contador==0)
 	{
@@ -150,6 +161,10 @@
 		}
 	}
 
+		contador++;
+	}
+
+
 
 //7:
 
@@ -159,10 +174,11 @@
 	var acumuladorEdad=0;
 	var promedioEdad;
 	var edadMinima;
+	var contadorM20=0;
 
 	while(contador<100)
 	{
-		contador++;
+		
 		edad=prompt('Ingrese la edad');
 		edad=parseInt(edad);
 		acumuladorEdad=acumuladorEdad+edad;
@@ -180,14 +196,10 @@
 
 		if(sexo=='m' && edad>=20)
 		{
-			acumuladorM20++;
+			contadorM20++;
 		}
 
-	}
-
-	promedioEdad=(acumuladorEdad/contador);
-
-	if(contador==1)
+	if(contador==0)
 	{
 		edadMinima=edad;
 	}
@@ -199,9 +211,16 @@
 		}
 	}
 
+	contador++;
+
+	}
+
+	promedioEdad=(acumuladorEdad/contador);
+
 	alert('El promedio de edad es '+promedioEdad);
 	alert('La edad mas baja es '+edadMinima);
-	alert('La cantidad de hombres mayores o de 20 años es '+acumuladorM20);
+	alert('La cantidad de hombres mayores o de 20 años es '+contadorM20);
+
 
 //8:
 
@@ -220,32 +239,27 @@
 	{
 		numero=prompt('Ingrese su numero');
 		numero=parseInt(numero);
-		contador++;
-		acumulador=acumulador+numero;
 		while(numero<0)
 		{
 			numero=prompt('ERROR Ingrese su numero');
 			numero=parseInt(numero);
 		}
+		contador++;
+		acumulador=acumulador+numero;
 
-
-		if(numero % 2 = 0)
+		if(numero % 2 == 0)
 		{
 			contadorPares++;
 		}
 
-	}
-
-	promedioNumeros=(acumulador/contador);
-
-	if(contador==1)
-	{
-		numeroMinimo=numero;
-		numeroMaximo=numero;
-	}
-	else
-	{
-		if(numero<numeroMinimo)
+		if(contador==1)
+		{
+			numeroMinimo=numero;
+			numeroMaximo=numero;
+		}
+		else
+		{
+			if(numero<numeroMinimo)
 		{
 			numeroMinimo=numero;
 		}
@@ -254,6 +268,13 @@
 			numeroMaximo=numero;
 		}
 	}
+
+	respuesta=prompt('ingrese no para dejar de ingresar numeros');
+	}
+
+	promedioNumeros=(acumulador/contador);
+
+
 
 	document.writeln('La cantidad de todos los numeros pares es '+contadorPares+"<br>");
 	document.writeln('El promedio de todos los numero ingresados es '+promedioNumeros+"<br>");
