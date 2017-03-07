@@ -1,9 +1,5 @@
 //PARCIAL:
-//PONER ESTOS EN JS SEPARADOS DE ENTRADA SALIDA Y ETC PARA PROBARLOS
 
-/* dudas:
-1-es necesario aclarar funciones?
-2-suma de el ultimo punto */
 //ENTRADA Y SALIDA
 //1:
 
@@ -165,7 +161,7 @@
 
 	var acumuladorVaronesNotaMas6=0;
 
-	while(contador<=2) 
+	while(contador<=100) 
 	{
 
 		notas=prompt('Ingrese las notas');

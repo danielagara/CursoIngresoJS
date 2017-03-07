@@ -1,8 +1,6 @@
 //RECUPERATORIO:
 //PONER ESTOS EN JS SEPARADOS DE ENTRADA SALIDA Y ETC PARA PROBARLOS
 
-/*DUDAS:
-6-orden del contador y el ingreso de los datos con el while, se pueden poner 2 whiles en uno*/
 //ENTRADA Y SALIDA DE DATOS
 //1:
 
@@ -276,8 +274,8 @@
 
 
 
-	document.writeln('La cantidad de todos los numeros pares es '+contadorPares+"<br>");
-	document.writeln('El promedio de todos los numero ingresados es '+promedioNumeros+"<br>");
-	document.writeln('La suma de todos los numeros ingresados es '+acumulador+"<br>");
-	document.writeln('El numero minimo es '+numeroMinimo+"<br>");
-	document.writeln('El numero maximo es '+numeroMaximo+"<br>");
+	document.write('La cantidad de todos los numeros pares es '+contadorPares+"<br>");
+	document.write('El promedio de todos los numero ingresados es '+promedioNumeros+"<br>");
+	document.write('La suma de todos los numeros ingresados es '+acumulador+"<br>");
+	document.write('El numero minimo es '+numeroMinimo+"<br>");
+	document.write('El numero maximo es '+numeroMaximo+"<br>");
